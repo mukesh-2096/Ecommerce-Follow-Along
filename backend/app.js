@@ -1,4 +1,5 @@
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const ErrorHandler = require('./utils/ErrorHandler');
 const app = express();
 const cookieParser = require("cookie-parser")

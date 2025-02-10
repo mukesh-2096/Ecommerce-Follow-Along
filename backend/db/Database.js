@@ -1,12 +1,13 @@
-const mongoose = reruire("mongoose");
+const mongoose = require('mongoose');
 
 const connectDatabase = () => {
-    mongoose.connect(process.env.DB_URL, {
-        useNewUrlparser: true,
-        useUnifiedTopology: true,
-    }).then((data) => {
-        console.log(`mongod connected with server: ${data.connection.host}`);
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => {
+      console.log('MongoDB connected');
+    })
+    .catch((error) => {
+      console.log('Error connecting to MongoDB:', error);
     });
-}
+};
 
 module.exports = connectDatabase;

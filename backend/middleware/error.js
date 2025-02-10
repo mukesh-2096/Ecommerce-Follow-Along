@@ -5,10 +5,13 @@ module.exports = (err, req, res, next) => {
     err.message = err.message || "Internal server Error"
 
     // wrong mondodb id error
-    if(err.name === 'CastError'){
-        const message = `Resources not found with this id... Invalid ${err.path}`;
-        err = new ErrorHandler(message, 400);
-    }
+
+    // Usage example
+    app.use((req, res, next) => {
+      const error = new ErrorHandler('Not Found', 404); // Make sure to use 'new'
+      next(error);
+    });
+    
 
     // Duplicate key error
     if(err.code === 11000){
