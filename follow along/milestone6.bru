@@ -1,0 +1,19 @@
+meta {
+  name: milestone6
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/user/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name":"mukesh",
+    "email":"mukesh@gmail.com",
+    "password":"123456"
+  }
+}

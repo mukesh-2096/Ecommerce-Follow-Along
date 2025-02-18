@@ -17,6 +17,7 @@ In this milestone, you will:
 - Gain clarity on the functionalities of an e-commerce application.
 - Prepare for upcoming milestones by setting up the project repository.
 
+---------------------------------------------------------------------------------------------------------------
 
 ## Milestone 2: Login Page Layout Added
 In this milestone, we have successfully added the layout for the Login Page. This includes the following key features:
@@ -31,6 +32,7 @@ In this milestone, we have successfully added the layout for the Login Page. Thi
 - **Submit Button**: A button for users to submit their login credentials.
 - **Error Handling**: Basic error handling to inform users of any issues with their input.
 
+---------------------------------------------------------------------------------------------------------------
 
 ## Milestone 3: Backend Added
 
@@ -45,6 +47,7 @@ In this milestone, we have successfully added the backend for our e-commerce app
 
 This milestone lays the foundation for the backend of our e-commerce application, providing essential functionality to support user interactions and data management. We will continue to build on this foundation in upcoming milestones to enhance the features and improve the user experience.
 
+---------------------------------------------------------------------------------------------------------------
 
 ## Milestone 4: Backend Enhancements
 In this milestone, we made several important updates to our e-commerce application. Here's a summary of what we did:
@@ -64,6 +67,7 @@ A controller is a part of the server that manages what happens when someone inte
 ### 3. File Uploads with Multer
 Sometimes, users want to upload files like profile pictures. Multer is a tool that makes it easy to upload files to our server. It helps us store user images in the backend, like a virtual file cabinet for storing pictures.
 
+---------------------------------------------------------------------------------------------------------------
 
 ## Milestone 5: Signup Page Added
 
@@ -74,3 +78,15 @@ In this milestone, we have successfully added the Signup page to our e-commerce 
 - **File Upload**: Users can upload a profile picture during registration. The image is displayed as a preview before submission.
 - **Form Submission**: On successful validation, the form data is submitted to the server using Axios. The server processes the registration request and stores the user data in the database.
 - **Error Handling**: Basic error handling to inform users of any issues with their input.
+
+---------------------------------------------------------------------------------------------------------------
+
+ ## Milestone 6: Database Added to Signup Page
+In this milestone, we have successfully connected the Signup page to the database. This includes the following key features:
+
+- **User Data Storage**: When users register, their information (name, email, hashed password, and profile picture URL) is now stored in MongoDB.
+- **Backend Validation**: Ensured that duplicate email registrations are prevented and added server-side validation to enhance security.
+- **Encrypted Passwords**: Used bcrypt to hash user passwords before storing them in the database for added security.
+- **Improved User Experience**: Users now receive a confirmation message after successful registration.
+
+---------------------------------------------------------------------------------------------------------------
