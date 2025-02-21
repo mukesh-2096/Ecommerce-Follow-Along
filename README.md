@@ -83,4 +83,29 @@ In this milestone, we have successfully connected the Signup page to the databas
 
 This milestone focuses on adding robust logic to the Signup and Login pages, improving data validation, user authentication, error handling, database integration, and overall user experience. These enhancements lay the groundwork for a secure and user-friendly application, ensuring that user interactions are smooth and reliable.
 
+
+
+## Milestone 7: Logic Added to Signup Page and login page
+
+This milestone focuses on adding robust logic to the Signup and Login pages, improving data validation, user authentication, error handling, database integration, and overall user experience. These enhancements lay the groundwork for a secure and user-friendly application, ensuring that user interactions are smooth and reliable.
+
 Feel free to reach out if you need further details or have any questions!
+
+### Milestone 8: Home Page with Product Display
+
+In this milestone, we've added a Home Page to our e-commerce application, where our products are prominently displayed. Here are the key features and improvements:
+
+#### Key Features:
+1. **Product Display**:
+   - The Home Page now showcases a variety of products with images, names, and prices.
+   - Each product is displayed in a grid layout for easy browsing.
+
+2. **Responsive Design**:
+   - The layout is fully responsive, ensuring optimal viewing on different devices, including desktops, tablets, and mobile phones.
+
+3. **User-Friendly Interface**:
+   - Enhanced the user interface with intuitive navigation, ensuring a smooth and enjoyable shopping experience.
+   - Added hover effects and animations to improve visual appeal and interactivity.
+
+#### Summary:
+This milestone focuses on creating an engaging Home Page where users can easily browse and explore our products. By adding responsive design. we have significantly improved the user experience. This update marks an essential step in making our e-commerce application user-friendly and visually appealing.

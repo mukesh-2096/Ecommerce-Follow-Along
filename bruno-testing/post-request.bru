@@ -1,0 +1,18 @@
+meta {
+  name: post-request
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8000/user/login
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email":"mukesh1@gmail.com",
+    "password":"Mukesh@123"
+  }
+}
