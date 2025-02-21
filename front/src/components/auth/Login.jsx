@@ -1,24 +1,30 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Signin = () => {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
-    // Get stored user data
-    const storedUser = JSON.parse(localStorage.getItem("user"));
+    try {
+      const response = await axios.post("http://localhost:8000/user/login", {
+        email,
+        password,
+      });
 
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
+      // Store the JWT token in localStorage
+      localStorage.setItem("token", response.data.token);
+
       console.log("Login successful!");
-      navigate("/"); // Redirect to home page
-    } else {
-      setError("Invalid email or password");
+      navigate("/home"); // Redirect to home page
+    } catch (err) {
+      setError(err.response?.data?.message || "Something went wrong");
     }
   };
 
@@ -43,6 +49,7 @@ const Signin = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+                required
               />
             </div>
 
@@ -55,6 +62,7 @@ const Signin = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+                required
               />
             </div>
 
@@ -72,4 +80,4 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Login;
