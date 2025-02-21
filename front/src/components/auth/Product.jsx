@@ -5,27 +5,27 @@ const Product = () => {
     const products = [
         {
             id: 1,
-            name: 'Desktop',
-            price: 150,
-            image: 'https://www.bhphotovideo.com/images/images2500x2500/hp_64w34aa_aba_p24h_g5_full_hd_1721389.jpg',
+            name: 'Infinix Note 40 Pro+ 5G (Vintage Green, 256 GB) (12 GB RAM)',
+            price: 248.15,
+            image: 'https://m.media-amazon.com/images/I/41SKvKK4+VL.jpg',
         },
         {
             id: 2,
-            name: 'Gaming PC',
-            price: 250,
-            image: 'https://i5.walmartimages.com/seo/Alarco-Gaming-PC-Desktop-Computer-Intel-3-70GHZ-16GB-Ram-512GB-SSD-WIFI-RX-580-8-GB-WINDOWS-11-RGB_aebe3de9-bae4-4e3f-9b75-a4d585a67ffe.f5013633ee4f5323f54e9263a31e5c58.jpeg',
+            name: 'Moto Edge 50 Fusion 5G (Snapdragon 7s Gen 2 & Upto 16 GB RAM)',
+            price: 279.32,
+            image: 'https://suprememobiles.in/cdn/shop/files/motorolaedge50fusion-32MPFrontcamera.png?v=1736579994',
         },
         {
             id: 3,
-            name: 'Keyboard + Mouse',
-            price: 50,
-            image: 'https://i5.walmartimages.com/asr/db1c0af9-f692-489a-8cac-77b326c3a8ca.fd06c35fa92adcaec0824a865a3a67a6.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff',
+            name: 'OnePlus Nord CE4 Lite 5G (Super Silver, 8GB RAM, 128GB Storage)',
+            price: 207.74,
+            image: 'https://m.media-amazon.com/images/I/61Io5-ojWUL.jpg',
         },
         {
             id: 4,
-            name: 'Gaming Headset',
-            price: 90,
-            image: 'https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6518/6518171_sd.jpg',
+            name: 'Realme RMX3840 12 Pro+ 12/256 GB Navigator Beige',
+            price: 357.80,
+            image: 'https://manikmobile.com/wp-content/uploads/2024/06/REALME-12-PLUS-5G-NAVIGATOR-BEIGE_01-1.jpg',
         },
     ];
 
