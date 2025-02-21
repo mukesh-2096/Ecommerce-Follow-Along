@@ -1,3 +1,4 @@
-import LoginPage from './pages/Login'
-import SignupPage from './pages/Signup'
-export {LoginPage,SignupPage};
+import LoginPage from './Pages/Login';
+import SignupPage from './Pages/Signup';
+import Homepage from './Pages/Homepage';
+export {LoginPage,SignupPage, Homepage};
