@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config(); // Load environment variables
 
+console.log('DB_URL:', process.env.DB_URL); // Add this line to check if the DB_URL is loaded
+
 const connectDB = async () => {
     try {
         await mongoose.connect(process.env.DB_URL, {
