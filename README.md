@@ -89,6 +89,7 @@ Milestone 2 focuses on creating and setting up the **Login Page** for the applic
 - Connected the server to MongoDB using Mongoose.
 - Added error handling middleware for better debugging.
 
+---
 
 ## Milestone 4 Overview
 
@@ -97,6 +98,7 @@ Milestone 2 focuses on creating and setting up the **Login Page** for the applic
 - User Model Creation: A new User model was created to represent user data in the database, including necessary fields such as name, email, password, etc.
 - Multer Integration: Multer was integrated to handle file uploads (e.g., profile images, documents, etc.). Multer handles multipart/form-data, which is used for uploading files in Node.js applications.
 
+---
 
 ## Milestone 5: Sign-Up Page Implementation
 
@@ -113,6 +115,8 @@ Technologies used:
 - Tailwind CSS
 - React Router
 
+---
+
 ## Milestone 6: Backend endpoint for the Signup page to store all user data securely
 
 In this milestone, I have implemented User Authentication for the backend with the following features:
@@ -125,6 +129,8 @@ Technologies Used:
 - MongoDB & Mongoose (Database & ORM)
 - bcrypt.js (Password encryption)
 - jsonwebtoken (JWT) (Authentication)
+
+---
 
 ## Milestone 7: Backend endpoint for the Login page to store all user data securely and Implementation
 
@@ -139,6 +145,8 @@ Technologies Used:
 - MongoDB & Mongoose (Database & ORM)
 - bcrypt.js (Password encryption)
 
+---
+
 ## Milestone 8:Card Componenet & Homepage Layout
 
 In this milestone, we focused on creating a Card Component and Homepage Layout. This Includes:
@@ -146,6 +154,8 @@ In this milestone, we focused on creating a Card Component and Homepage Layout. 
 - Resusable Product card Component
 - Responsive Grid Layout
 - Tailwind CSS Styling for Home Page
+
+---
 
 ## Milestone 9: Product Management Frontend
 
@@ -155,6 +165,8 @@ In this milestone we focused on Interacting with product API, Where users can ad
 - Form to add a new product
 - Connects to Express & MongoDB API
 
+---
+
 ## Milestone 10: Product API
 
 In this milestone, We focused on Validation and Store Product Details Using Express and MongoDB API Using Mongoose Library
@@ -162,6 +174,8 @@ In this milestone, We focused on Validation and Store Product Details Using Expr
 - Create a Product with name, descriptions, price and Image URL
 - Validates input before storing data in MongoDB
 - RESTful POST endpoint to add products
+
+---
 
 ## Milestone 11: Dynamic Home Page
 Welcome to Milestone 11! 🌟
@@ -174,6 +188,8 @@ Understand how to write an endpoint that will extract and send data from MongoDB
 Learn how to receive data at the frontend.
 Learn how to display that data dynamically using the product card component created earlier.
 
+---
+
 ### Milestone 12: My Products Page
 **Overview**
 In this milestone, we created a "My Products" page that displays all the products added by the user, filtered by their email.
@@ -183,9 +199,18 @@ Backend: Added an endpoint to fetch products by user email.
 Frontend: Created a function to retrieve and display products dynamically.
 Component: Utilized the Card component to present each product.
 
+---
 
 # Milestone 13: Edit Product Functionality
 
 ## Learning Goals 🎯
 - Write an endpoint to update existing data in MongoDB.
 - Autofill forms with previous data for editing.
+
+---
+
+# Milestone 14: Delete Product Functionality
+
+## Learning Goals 🎯
+- Write an endpoint to update existing data in MongoDB.
+- Deletes the product from the page
