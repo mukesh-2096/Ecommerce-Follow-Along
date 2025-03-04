@@ -13,7 +13,6 @@ const app = express();
 // Load environment variables (only in development mode)
 if (process.env.NODE_ENV !== "PRODUCTION") {
     dotenv.config({ path: "config/.env" });
-    console.log('DB_URL:', process.env.DB_URL);
 }
 
 // Ensure uploads directory exists
