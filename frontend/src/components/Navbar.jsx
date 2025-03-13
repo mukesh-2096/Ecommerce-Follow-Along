@@ -58,7 +58,7 @@ function Navbar({ hideButtons = false }) {
 
           {/* Add Product Button (conditionally hidden) */}
           {!hideButtons && (
-            <button onClick={() => navigate('/products')} className="text-2xl font-semibold hover:text-yellow-300 transition">
+            <button onClick={() => navigate('/products')} className="bg-blue-900 px-4 py-2 rounded-lg hover:bg-blue-500 transition">
               Add Product
             </button>
           )}
