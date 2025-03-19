@@ -183,6 +183,8 @@ By the end of this milestone, you will:
 - Responsive design for all screen sizes.
 - Reusable Navbar component.
 
+---
+
 # Milestone 16: Product in detail Page is added
 
 ### Description
@@ -193,17 +195,20 @@ This milestone involves creating a Page where it contains more detailed informat
 - Responsive design for all screen sizes.
 - Shows similar products at bottom of Page.
 
+---
 
 # 🛒 **Milestone 17: Cart Functionality in Node.js + MongoDB**
 
 This project adds **cart functionality** to an existing **Node.js + MongoDB** application. The functionality includes creating a cart, adding products to the cart, retrieving cart details, and removing products from the cart.
 Here’s a professional **README.md** file tailored for **Milestone 18** — Fetching products inside a cart using the user's email:
 
+---
+
 ## 🛒 **Milestone 18: Fetch Products in Cart using User Email**
 
 This project adds functionality to **fetch products inside a user's cart** using their **email**. The backend endpoint retrieves cart data, including full product details, and returns it in a structured format to display on the cart page.
 
-
+---
 
 # Milestone 19: Cart Functionality Implementation
 
@@ -218,3 +223,25 @@ In this milestone, we implemented a cart system with both frontend and backend f
      - Price
      - Product Image
      - Quantity Counter with `+` and `-` buttons.
+
+---
+  
+# Milestone 20: Profile Page and User Data API
+
+## Overview 📝
+In this milestone, we implemented a **profile page** and a **backend endpoint** to enhance user experience and manage user data. The profile page displays key user information such as profile photo, name, email, and address. It allows adding new addresses while handling cases where no addresses exist.
+
+## Key Features 🚀
+1. **Backend Endpoint**:
+   - Created an endpoint to retrieve all user data.
+   - Supports sending user data via email (optional, as per requirements).
+   
+2. **Frontend Profile Page**:
+   - Displays:
+     - **Profile Photo**, **Name**, and **Email** in one section.
+     - **Address** in another section.
+   - Provides an option to **Add Address**.
+   - Displays a fallback message "No address found" if no addresses are available.
+
+3. **Dynamic Design**:
+   - The profile page is designed with responsiveness and usability in mind.
