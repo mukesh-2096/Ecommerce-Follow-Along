@@ -42,21 +42,24 @@ const Profile = () => {
             <div className="h-screen w-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-700 p-4">
 
                 <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md">
+                    {/* Profile Picture */}
                     <div className="flex justify-center mb-6">
                         <img
                             src={user.profilePic 
-                                ? user.profilePic
+                                ? `http://localhost:8000${user.profilePic}`   // ✅ Corrected Image Path
                                 : "https://img.icons8.com/ios-filled/100/user-male-circle.png"}
                             alt="Profile"
                             className="w-32 h-32 rounded-full border-4 border-blue-400 shadow-lg"
                         />
                     </div>
 
+                    {/* Welcome Text */}
                     <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
                         <span className='text-orange-400'>Welcome </span>
                         <span className='text-gray-900'>{user.name}</span>
                     </h1>
 
+                    {/* User Details */}
                     <div className="space-y-6 text-lg">
                         <div>
                             <strong className="text-gray-700">Name:</strong>

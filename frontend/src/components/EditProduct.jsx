@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from '../components/Navbar'; // ✅ Navbar Imported
 
 const EditProduct = () => {
-    const { id } = useParams(); // Get product ID from URL
+    const { id } = useParams(); 
     const navigate = useNavigate();
 
     const [product, setProduct] = useState({
@@ -16,7 +17,6 @@ const EditProduct = () => {
 
     const [previewImage, setPreviewImage] = useState(null);
 
-    // Fetch existing product details
     useEffect(() => {
         const fetchProduct = async () => {
             try {
@@ -38,7 +38,6 @@ const EditProduct = () => {
         fetchProduct();
     }, [id]);
 
-    // Handle input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setProduct((prev) => ({
@@ -47,7 +46,6 @@ const EditProduct = () => {
         }));
     };
 
-    // Handle rating change
     const handleRatingChange = (value) => {
         setProduct((prev) => ({
             ...prev,
@@ -55,7 +53,6 @@ const EditProduct = () => {
         }));
     };
 
-    // Handle image upload
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         if (file) {
@@ -67,7 +64,6 @@ const EditProduct = () => {
         }
     };
 
-    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -99,93 +95,100 @@ const EditProduct = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 flex flex-col items-center p-6 text-white">
-            <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-2xl">
-                <h2 className="text-3xl font-bold text-center mb-6">Edit Product</h2>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+        <>
+            {/* ✅ Navbar with hideButtons for No "Add Product" Option */}
+            <Navbar hideButtons={true} />
+            
+            <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 pt-20 p-6 text-white">
+                <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-2xl">
+                    <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Edit Product</h2>
 
-                    {/* Product Image Preview */}
-                    <div className="w-full h-[200px] flex justify-center items-center bg-white rounded-lg">
-                        {previewImage ? (
-                            <img
-                                src={previewImage}
-                                alt="Preview"
-                                className="w-full h-full object-contain"
-                            />
-                        ) : (
-                            <p className="text-white">No image available</p>
-                        )}
-                    </div>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageChange}
-                        className="p-2 border rounded bg-gray-400 text-white"
-                    />
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
 
-                    {/* Product Name */}
-                    <input
-                        type="text"
-                        name="name"
-                        value={product.name}
-                        onChange={handleChange}
-                        placeholder="Product Name"
-                        className="p-2 border rounded bg-gray-400 text-white"
-                        required
-                    />
+                        {/* ✅ Improved Image Preview Box */}
+                        <div className="w-full h-[200px] flex justify-center items-center bg-gray-200 rounded-lg border border-gray-400">
+                            {previewImage ? (
+                                <img
+                                    src={previewImage}
+                                    alt="Preview"
+                                    className="w-full h-full object-contain rounded-lg"
+                                />
+                            ) : (
+                                <p className="text-gray-500">No image available</p>
+                            )}
+                        </div>
 
-                    {/* Product Price */}
-                    <input
-                        type="number"
-                        name="price"
-                        value={product.price}
-                        onChange={handleChange}
-                        placeholder="Price"
-                        className="p-2 border rounded bg-gray-400 text-white"
-                        required
-                    />
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImageChange}
+                            className="p-2 border rounded bg-gray-300 text-gray-700"
+                        />
 
-                    {/* Product Rating */}
-                    <div className="flex items-center gap-2">
-                        <span className="text-gray-400">Rating:</span>
-                        {Array.from({ length: 5 }, (_, i) => (
-                            <span
-                                key={i}
-                                onClick={() => handleRatingChange(i + 1)}
-                                className={i < product.rating ? "text-yellow-400 cursor-pointer" : "text-gray-400 cursor-pointer"}
-                            >
-                                ★
-                            </span>
-                        ))}
-                        <span className="text-gray-400 ml-2">({product.rating || 0})</span>
-                    </div>
+                        <input
+                            type="text"
+                            name="name"
+                            value={product.name}
+                            onChange={handleChange}
+                            placeholder="Product Name"
+                            className="p-2 border rounded bg-gray-300 text-gray-700"
+                            required
+                        />
 
-                    {/* Product Description */}
-                    <textarea
-                        name="description"
-                        value={product.description}
-                        onChange={handleChange}
-                        placeholder="Description"
-                        className="p-2 border rounded bg-gray-400 text-white"
-                    />
+                        <input
+                            type="number"
+                            name="price"
+                            value={product.price}
+                            onChange={handleChange}
+                            placeholder="Price"
+                            className="p-2 border rounded bg-gray-300 text-gray-700"
+                            required
+                        />
 
-                    {/* Action Buttons */}
-                    <button
-                        type="submit"
-                        className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-md transition-all"
-                    >
-                        Update Product
-                    </button>
-                    <button
-                        type="button"
-                        onClick={() => navigate(`/product/${id}`)}
-                        className="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg shadow-md transition-all"
-                    >
-                        Cancel
-                    </button>
-                </form>
+                        <div className="flex items-center gap-2">
+                            <span className="text-gray-500">Rating:</span>
+                            {Array.from({ length: 5 }, (_, i) => (
+                                <span
+                                    key={i}
+                                    onClick={() => handleRatingChange(i + 1)}
+                                    className={
+                                        i < product.rating
+                                            ? "text-yellow-400 cursor-pointer"
+                                            : "text-gray-400 cursor-pointer"
+                                    }
+                                >
+                                    ★
+                                </span>
+                            ))}
+                            <span className="text-gray-500 ml-2">({product.rating || 0})</span>
+                        </div>
+
+                        <textarea
+                            name="description"
+                            value={product.description}
+                            onChange={handleChange}
+                            placeholder="Description"
+                            className="p-2 border rounded bg-gray-300 text-gray-700"
+                        />
+
+                        <button
+                            type="submit"
+                            className="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg shadow-md transition-all"
+                        >
+                            Update Product
+                        </button>
+
+                        <button
+                            type="button"
+                            onClick={() => navigate(`/product/${id}`)}
+                            className="px-4 py-2 bg-gray-500 hover:bg-gray-600 text-white rounded-lg shadow-md transition-all"
+                        >
+                            Cancel
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 
