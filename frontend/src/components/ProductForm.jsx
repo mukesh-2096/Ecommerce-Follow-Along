@@ -59,7 +59,7 @@ const ProductForm = () => {
     };
 
     return (
-        <div className="flex items-center bg-blue-700 justify-center h-screen w-screen">
+        <div className="flex items-center bg-gradient-to-br from-blue-500 to-indigo-700 flex flex-col items-center p-6 justify-center h-screen w-screen">
             <Navbar hideButtons={true} />
             <div className="p-6 max-w-lg mx-auto bg-gray-200 shadow-xl rounded-lg">
                 <h2 className="text-3xl font-extrabold text-gray-800 mb-6 text-center">

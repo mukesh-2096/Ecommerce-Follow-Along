@@ -99,7 +99,7 @@ const EditProduct = () => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-blue-800 text-white">
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 flex flex-col items-center p-6 text-white">
             <div className="p-8 bg-white rounded-lg shadow-lg w-full max-w-2xl">
                 <h2 className="text-3xl font-bold text-center mb-6">Edit Product</h2>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-4">

@@ -1,114 +1,40 @@
-// import { useState } from "react";
-// import { Link, useNavigate } from "react-router-dom";
-// // import Navbar from "./Navbar";
-// import axios from "axios";
-
-// const Signup = () => {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-//   const [error, setError] = useState("");
-//   const navigate = useNavigate();
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     setError("");
-
-//     try {
-//       const response = await axios.post("http://localhost:8000/user/signup", {
-//         name,
-//         email,
-//         password,
-//       });
-
-//       if (response.status === 201) {
-//         console.log("Signup successful! Please login.");
-//         navigate("/login"); // Redirect to login page
-//       }
-//     } catch (err) {
-//       setError(err.response?.data?.message || "Something went wrong.");
-//     }
-//   };
-
-
-//   return (
-//     <div className="min-h-screen bg-blue-700 flex flex-col items-center justify-center">
-//       <div className="w-96 bg-white p-8 rounded-lg shadow-lg">
-//         <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
-
-//         {error && <p className="text-red-600 text-center">{error}</p>}
-
-//         <form className="space-y-4" onSubmit={handleSubmit}>
-//           <input
-//             type="text"
-//             placeholder="Full Name"
-//             value={name}
-//             onChange={(e) => setName(e.target.value)}
-//             className="w-full p-2 border rounded"
-//             required
-//           />
-
-//           <input
-//             type="email"
-//             placeholder="Email"
-//             value={email}
-//             onChange={(e) => setEmail(e.target.value)}
-//             className="w-full p-2 border rounded"
-//             required
-//           />
-
-//           <input
-//             type="password"
-//             placeholder="Password"
-//             value={password}
-//             onChange={(e) => setPassword(e.target.value)}
-//             className="w-full p-2 border rounded"
-//             required
-//           />
-
-//           <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded-md">
-//             Sign Up
-//           </button>
-//         </form>
-
-//         <p className="text-center mt-4">
-//           Already have an account?{" "}
-//           <Link to="/login" className="text-blue-600">Sign In</Link>
-//         </p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Signup;
-
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../Navbar"; // ✅ Imported Navbar
 import axios from "axios";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [profilePic, setProfilePic] = useState(null); // Profile Pic state
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setProfilePic(file);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("address", address);
+    if (profilePic) formData.append("profilePic", profilePic); // Append Profile Pic
+
     try {
-      const response = await axios.post("http://localhost:8000/user/signup", {
-        name,
-        email,
-        password,
+      const response = await axios.post("http://localhost:8000/user/signup", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
 
       if (response.status === 201) {
-        console.log("Signup successful! Please login.");
-        navigate("/login"); // Redirect to login page
+        console.log("✅ Signup successful!");
+        navigate("/login");
       }
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong.");
@@ -116,58 +42,103 @@ const Signup = () => {
   };
 
   return (
-    <>
-      <Navbar /> {/* ✅ Navbar added */}
+    <div className="min-h-screen bg-gradient-to-br from-blue-500 to-indigo-700 flex items-center justify-center p-4">
+      <div className="bg-white p-8 rounded-3xl shadow-xl w-full max-w-md">
 
-      <div className="mt-16 min-h-screen bg-blue-700 flex flex-col items-center justify-center">
-        <div className="w-96 bg-white p-8 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold text-center mb-4">Sign Up</h2>
+        {/* Title */}
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+          Create Your Account
+        </h2>
 
-          {error && <p className="text-red-600 text-center">{error}</p>}
+        {/* Error Message */}
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
 
-          <form className="space-y-4" onSubmit={handleSubmit}>
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-4">
+
+          {/* Full Name */}
+          <div>
+            <label htmlFor="name" className="block text-gray-700 font-medium mb-1">Full Name</label>
             <input
+              id="name"
               type="text"
-              placeholder="Full Name"
+              placeholder="Enter your full name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
+          </div>
 
+          {/* Email */}
+          <div>
+            <label htmlFor="email" className="block text-gray-700 font-medium mb-1">Email</label>
             <input
+              id="email"
               type="email"
-              placeholder="Email"
+              placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
+          </div>
 
+          {/* Password */}
+          <div>
+            <label htmlFor="password" className="block text-gray-700 font-medium mb-1">Password</label>
             <input
+              id="password"
               type="password"
-              placeholder="Password"
+              placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-2 border rounded"
+              className="w-full p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
               required
             />
+          </div>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md"
-            >
-              Sign Up
-            </button>
-          </form>
+          {/* Address */}
+          <div>
+            <label htmlFor="address" className="block text-gray-700 font-medium mb-1">Address</label>
+            <input
+              id="address"
+              type="text"
+              placeholder="Enter your address"
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              className="w-full p-3 border border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              required
+            />
+          </div>
 
-          <p className="text-center mt-4">
-            Already have an account?{" "}
-            <Link to="/login" className="text-blue-600">Sign In</Link>
-          </p>
-        </div>
+          {/* Profile Picture Upload */}
+          <div>
+            <label htmlFor="profilePic" className="block text-gray-700 font-medium mb-1">Profile Picture</label>
+            <input
+              id="profilePic"
+              type="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className="w-full p-2 border border-blue-300 rounded-lg cursor-pointer file:bg-blue-500 file:text-white file:py-2 file:px-4 file:border-0 file:rounded-lg hover:file:bg-blue-600"
+            />
+          </div>
+
+          {/* Signup Button */}
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        {/* Signin Link */}
+        <p className="text-center mt-4 text-gray-600">
+          Already have an account? <Link to="/login" className="text-blue-600 hover:underline">Sign In</Link>
+        </p>
       </div>
-    </>
+    </div>
   );
 };
 
