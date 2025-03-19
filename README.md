@@ -202,3 +202,19 @@ Here’s a professional **README.md** file tailored for **Milestone 18** — Fet
 ## 🛒 **Milestone 18: Fetch Products in Cart using User Email**
 
 This project adds functionality to **fetch products inside a user's cart** using their **email**. The backend endpoint retrieves cart data, including full product details, and returns it in a structured format to display on the cart page.
+
+
+
+# Milestone 19: Cart Functionality Implementation
+
+## Overview 📝
+In this milestone, we implemented a cart system with both frontend and backend functionalities. The cart page is designed to display products dynamically, allowing users to adjust the quantity of each product with `+` and `-` buttons. Backend endpoints were created to handle quantity updates efficiently.
+
+## Key Features 🚀
+1. **Cart Frontend Page:**
+   - Displays all the products in the user's cart.
+   - Each product has:
+     - Name
+     - Price
+     - Product Image
+     - Quantity Counter with `+` and `-` buttons.
