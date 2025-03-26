@@ -245,3 +245,29 @@ In this milestone, we implemented a **profile page** and a **backend endpoint** 
 
 3. **Dynamic Design**:
    - The profile page is designed with responsiveness and usability in mind.
+
+
+   Here's the updated README with **Milestone 21** added:
+
+---
+
+# Milestone 21: Add Address Form
+
+## Overview 📝  
+In this milestone, we implemented an **address form page** that allows users to add a new address from the profile page. This improves the user experience by enabling seamless address management.
+
+## Key Features 🚀  
+1. **Frontend Address Form Page**:  
+   - A dedicated page for users to enter and submit their address.  
+   - Navigates from the **Profile Page** when clicking "Add Address."  
+
+2. **State Management**:  
+   - Created a state to store user input dynamically.  
+   - Ensures the address is saved before submitting.  
+
+3. **Navigation & Integration**:  
+   - Clicking "Add Address" in the **Profile Page** redirects to the form.  
+   - Prepares for backend integration in the next milestone.  
+
+---
+
