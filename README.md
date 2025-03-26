@@ -271,3 +271,28 @@ In this milestone, we implemented an **address form page** that allows users to 
 
 ---
 
+Here's the updated README with **Milestone 22** added:
+
+---
+
+# Milestone 22: Address API - Save Address to User Collection  
+
+## Overview 📝  
+In this milestone, we implemented a **backend endpoint** to receive and store user addresses. The address submitted from the frontend **Address Form Page** is now added to the **user collection** in the database.  
+
+## Key Features 🚀  
+
+1. **Backend Endpoint for Address Submission**:  
+   - Created a **POST** endpoint to receive address data from the frontend.  
+   - Extracts user email and address details from the request body.  
+
+2. **Update User Collection**:  
+   - The received address is added to the **address array** in the corresponding user's document in MongoDB.  
+   - Ensured proper validation before saving the address.  
+
+3. **Seamless Integration with Frontend**:  
+   - Once the address is submitted, it is stored in the database for future retrieval.  
+   - Prepares for displaying saved addresses in the profile page in the next milestone.  
+
+---
+
