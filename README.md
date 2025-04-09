@@ -327,3 +327,27 @@ Create an order confirmation page as part of the frontend where the user can:
 2. **Show Delivery Address**: The address selected by the user for delivery is displayed prominently.
 3. **Cart Total**: The total value of all items in the cart is calculated and shown to the user.
 4. **Place Order Button**: A button at the bottom of the page allows users to finalize their order.
+
+---
+
+# Milestone 25: Backend Endpoint for Placing Orders 🌟
+
+## Learning Goals 🎯
+By completing this milestone, we aim to:
+- Create a backend endpoint to help in placing orders.
+- Enhance skills in handling and storing user-specific data in MongoDB.
+
+
+## Task Steps 📝
+1. **Endpoint Creation**:
+   - Developed an API endpoint that accepts products, user details, and address information.
+
+2. **Retrieve User ID**:
+   - Used the user's email to fetch their `_id` from the database.
+
+3. **Store Orders**:
+   - Created separate orders for each product using the same address.
+   - Stored order details in the **MongoDB order collection** using the pre-existing order schema.
+
+4. **Completion**:
+   - Successfully implemented an endpoint to handle order placement efficiently.
