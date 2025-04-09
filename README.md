@@ -374,3 +374,29 @@ By completing this milestone, we have achieved:
 4. **Response**:
    - Sent the retrieved orders in the response.
 
+---
+
+
+# Milestone 27: My Orders Page
+
+## Overview
+In this milestone, we created a **frontend page** to display all the user orders. This implementation improves navigation and provides users with a seamless way to view their order details.
+
+## Features
+- **My Orders Page**: A dedicated page for displaying all user orders.
+- **API Integration**: Sends a `GET` request to the `my-orders` endpoint to fetch user order data.
+- **Navbar Integration**: Added a link to the navbar for easier navigation to the `my-orders` page.
+
+## Steps Implemented
+1. **Created the My Orders Page**:
+   - Designed a new frontend page to showcase user order details.
+
+2. **API Request**:
+   - Configured a `GET` request to the `my-orders` endpoint.
+   - Passed the user's email as a parameter to fetch their orders.
+
+3. **Data Display**:
+   - Rendered all retrieved orders dynamically on the `my-orders` page.
+
+4. **Navbar Update**:
+   - Added a link to the `my-orders` page in the navbar for better accessibility.
