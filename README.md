@@ -309,3 +309,21 @@ By the end of this milestone, the user will be able to:
 1. Use the "Place Order" button inside the cart page.
 2. Navigate to a "Select Address" page to view all available addresses and select a delivery address.
 3. Utilize a backend endpoint to retrieve user addresses.
+
+---
+
+
+# Milestone 24: Order Confirmation Page
+
+## Objective ✨
+Create an order confirmation page as part of the frontend where the user can:
+- View the list of products being ordered.
+- See the selected delivery address.
+- Check the total cart value.
+- Place the order using a "Place Order" button.
+
+## Steps Implemented 📝
+1. **Display Products**: All the products in the order are listed for the user's reference.
+2. **Show Delivery Address**: The address selected by the user for delivery is displayed prominently.
+3. **Cart Total**: The total value of all items in the cart is calculated and shown to the user.
+4. **Place Order Button**: A button at the bottom of the page allows users to finalize their order.
