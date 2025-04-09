@@ -1,6 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { LoginPage,ProductDetails, SignupPage,Cart, Profile, Homepage, ProductForm, EditProduct } from './Routes.jsx';
-
+import { 
+    LoginPage, 
+    ProductDetails, 
+    SignupPage, 
+    Cart, 
+    Profile, 
+    Homepage, 
+    ProductForm, 
+    EditProduct, 
+    Order 
+} from './Routes.jsx'; // ✅ Importing from Routes.jsx
 
 function App() {
   return (
@@ -14,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/edit-product/:id" element={<EditProduct />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/order" element={<Order />} />  {/* ✅ Order Page Route Fixed */}
       </Routes>
     </BrowserRouter>
   );

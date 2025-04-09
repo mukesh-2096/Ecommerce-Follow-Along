@@ -296,3 +296,16 @@ In this milestone, we implemented a **backend endpoint** to receive and store us
 
 ---
 
+
+# Milestone 23: Select Address Page and Order Schema
+
+## Objective 🌟
+Develop key functionality for the order process by:
+- Creating a "Select Address" page on the frontend.
+- Writing a Mongoose schema to manage order details in the backend.
+
+## Learning Goals 🎯
+By the end of this milestone, the user will be able to:
+1. Use the "Place Order" button inside the cart page.
+2. Navigate to a "Select Address" page to view all available addresses and select a delivery address.
+3. Utilize a backend endpoint to retrieve user addresses.
