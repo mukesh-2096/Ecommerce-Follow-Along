@@ -43,10 +43,12 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 const userRoutes = require("./User/userRouter");
 const productRoutes = require("./Products/productRouter");
 const cartRoutes = require("./cart/cartRouter");
+const orderRoutes = require("./orders/orderRoutes"); // ✅ Added order routes
 
 app.use("/user", userRoutes);
 app.use("/products", productRoutes);
 app.use("/cart", cartRoutes);
+app.use("/orders", orderRoutes); // ✅ Register order routes
 
 // ✅ Error Handling Middleware
 app.use(ErrorHandler);
@@ -62,14 +64,14 @@ const server = app.listen(PORT, () => {
 
 // ✅ Handling uncaught exceptions
 process.on("uncaughtException", (err) => {
-    console.error(`Error: ${err.message}`);
+    console.error(`❌ Error: ${err.message}`);
     console.log("Shutting down due to an uncaught exception...");
     process.exit(1);
 });
 
 // ✅ Handle unhandled promise rejections
 process.on("unhandledRejection", (err) => {
-    console.error(`Unhandled Rejection: ${err.message}`);
+    console.error(`❌ Unhandled Rejection: ${err.message}`);
     console.log("Shutting down due to an unhandled promise rejection...");
     server.close(() => process.exit(1));
 });

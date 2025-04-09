@@ -52,6 +52,10 @@ const Card = ({ id, name, price, image, onAddToCart, onBuyNow, onEdit, onDelete 
     }
   };
 
+  const handleBuyNow = () => {
+    navigate("/order", { state: { productId: id, quantity, name, price } });
+  };
+
   return (
     <div className="bg-gradient-to-br from-blue-500 to-indigo-700 rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-200 w-full max-w-sm">
       {/* Product Image */}
@@ -96,7 +100,7 @@ const Card = ({ id, name, price, image, onAddToCart, onBuyNow, onEdit, onDelete 
           <div className="flex gap-3">
             {/* Buy Now */}
             <button
-              onClick={onBuyNow}
+              onClick={handleBuyNow}
               className="bg-green-500 cursor-pointer text-white py-2 px-6 rounded-lg hover:bg-green-600 transition-all"
             >
               Buy Now
