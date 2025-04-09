@@ -351,3 +351,26 @@ By completing this milestone, we aim to:
 
 4. **Completion**:
    - Successfully implemented an endpoint to handle order placement efficiently.
+---
+
+# Milestone 26: Create Backend Endpoint for Place Order 🌟
+
+## Learning Goals 🎯
+By completing this milestone, we have achieved:
+- Developed a backend endpoint to retrieve all orders for a specific user.
+- Enhanced our understanding of handling user-specific data in backend systems.
+
+
+## Steps Implemented 📝
+1. **Endpoint Creation**:
+   - Built an API endpoint that accepts the user's email as input.
+
+2. **Retrieve User ID**:
+   - Fetched the `_id` of the user using the provided email from the database.
+
+3. **Fetch Orders**:
+   - Queried the database to get all the orders associated with the retrieved `_id`.
+
+4. **Response**:
+   - Sent the retrieved orders in the response.
+
